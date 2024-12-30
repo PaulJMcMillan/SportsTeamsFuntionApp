@@ -41,7 +41,6 @@ namespace SportsTeamsFuntionApp
                 _logger.LogInfo($"SportsTeamsFunctionApp is processing a request for sports teams for {cityRequested}. CorrelationId: {_contextService.CorrelationId}");
                 var teams = _sportsTeamsService.Read(city);
                 _logger.LogInfo($"SportsTeamsFunctionApp finished processing the request for {cityRequested}. Correlation Id: {_contextService.CorrelationId}");
-                _logger.LogInfo("test");
                 return new OkObjectResult(teams);
             }
             catch (Exception ex)
